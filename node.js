@@ -12,8 +12,16 @@ module.exports = function(RED) {
                 cc: msg.cc,
                 bcc: msg.bcc,                
                 subject: msg.topic || msg.title || 'Message from Node-RED',
-                text: msg.payload.toString()
             };
+
+            if (config.isHtml){
+                data.html = msg.payload.toString();
+            }
+            else{
+                data.text = msg.payload.toString();
+            }
+
+
             sgMail.send(data, function(err) {
                 if (err) {
                     node.error(err.toString(), msg);

@@ -5,7 +5,8 @@
         defaults: {
             from: {value:""},
             to: {value:""},
-            name: {value:""}
+            name: {value:""},
+            isHtml: {value: true}
         },
         credentials: {
             key: {type:"password"},
@@ -36,6 +37,10 @@
     <div class="form-row">
         <label for="node-input-name"><i class="icon-tag"></i> Name</label>
         <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i> Is HTML</label>
+        <input type="checkbox" id="node-input-isHtml" placeholder="Is HTML">
     </div>
 </script>
 
